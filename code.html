@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Monthsary!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        .firefly {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 0, 0.8);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+            animation: float 5s infinite linear;
+            z-index: 5;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-20px) translateX(20px); }
+            50% { transform: translateY(-40px) translateX(-20px); }
+            75% { transform: translateY(-20px) translateX(20px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- YouTube Video Embed (Full-Screen Background) -->
+    <iframe src="https://www.youtube.com/embed/V1JHr9YbpTo?autoplay=1&mute=1&loop=1&playlist=V1JHr9YbpTo&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3" allowfullscreen></iframe>
+
+    <!-- Overlay Greeting -->
+    <div class="overlay">
+        <h1>Happy Monthsary, My Love!</h1>
+        <p>Another month of beautiful memories with you. I love you more every day. 🌟</p>
+    </div>
+
+    <!-- Fireflies Script -->
+    <script>
+        // Create fireflies
+        function createFirefly() {
+            const firefly = document.createElement('div');
+            firefly.className = 'firefly';
+            firefly.style.left = Math.random() * 100 + '%';
+            firefly.style.top = Math.random() * 100 + '%';
+            firefly.style.animationDelay = Math.random() * 5 + 's';
+            document.body.appendChild(firefly);
+
+            // Remove after animation
+            setTimeout(() => {
+                firefly.remove();
+            }, 5000);
+        }
+
+        // Generate multiple fireflies
+        setInterval(createFirefly, 1000);
+    </script>
+</body>
+</html>
